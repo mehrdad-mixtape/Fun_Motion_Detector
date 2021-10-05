@@ -8,9 +8,9 @@ def main():
 
     recording = True
     frame_size = (int(capture.get(3)), int(capture.get(4)))
-    frame_rate = 20.0
+    frame_rate = 30.0
     video_format = cv2.VideoWriter_fourcc(*'mp4v')
-    video_output = cv2.VideoWriter(f"video_{datetime.datetime.now()}.mp4", video_format, frame_rate, frame_size)
+    video_output = cv2.VideoWriter(f"video_{datetime.datetime.now().strftime('%y-%m-%d_%H:%M:%S')}.mp4", video_format, frame_rate, frame_size)
 
     while True:
         _, frame = capture.read() # Return _ : somethings , frame : frames of video.
@@ -24,7 +24,9 @@ def main():
         if len(faces) + len(bodys) > 0: # If somebody capture with camera.
             recording = True
 
-        
+        video_output.write(frame)
+
+        '''
         for (x, y, width, height) in faces:
             cv2.rectangle(frame, (x, y), (x + width, y + height), (255, 0, 0), 3)
             # frame : image
@@ -33,11 +35,14 @@ def main():
             # 3 : thickness of rectangle is 3 pixel
         for (x, y, width, height) in bodys:
             cv2.rectangle(frame, (x, y), (x + width, y + height), (255, 0, 255), 3)
+        '''
 
         cv2.imshow("Camera", frame)
 
         if cv2.waitKey(1) == ord('q'): # If i press q on keyboard capture is going to end.
             break
+    
+    video_output.release() # Save and release video
     capture.release() # Release my Camera
     cv2.destroyAllWindows() # Kill
 
