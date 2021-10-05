@@ -64,7 +64,7 @@ def main():
             video_output.release()
             break
         
-        #cv2.imshow("Camera", frame) # Show you window camera
+        cv2.imshow("Camera", frame) # Show you window camera
 
     video_output.release() # Save and release video
     capture.release() # Release my Camera
