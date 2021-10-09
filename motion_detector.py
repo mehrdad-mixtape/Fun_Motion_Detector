@@ -13,7 +13,7 @@ def main():
     detection = False
     detection_stopped_time = None
     timer_started = False
-    SECOND_TO_RECORD_AFTER_DETEDCTION = 5
+    SECOND_TO_RECORD_AFTER_DETEDCTION = 10
 
     # ------------------------------Define Recording Variables------------------------------
     frame_size = (int(capture.get(3)), int(capture.get(4)))
@@ -25,10 +25,10 @@ def main():
         _, frame = capture.read() # Return _ : somethings , frame : frames of video.
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) # Get gray color to all frames. COLOR_BGR2GRAY : get gray color
-        faces = face_cc.detectMultiScale(gray, 1.3, 5) # Return list of faces could be captured.
+        faces = face_cc.detectMultiScale(gray, 10.0, 5) # Return list of faces could be captured.
         # 1.3 : accurcy and speed of algorithm (lower is faster).
         # 5 : how many face can detect? 5 is middle (lower than 5 decrease power detect / more than 5 increase power detect)
-        bodys = body_cc.detectMultiScale(gray, 1.3, 5) # Return list of bodys could be captured.
+        bodys = body_cc.detectMultiScale(gray, 10.0, 5) # Return list of bodys could be captured.
         
         if len(faces) + len(bodys) > 0: # If somebody be in camera zone.
             if detection == True: # Continue recording
