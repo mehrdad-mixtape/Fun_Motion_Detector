@@ -1,5 +1,9 @@
-# Fun_Motion_Detector
-Fun motion detector with camera OK let's do this
+## Fun_Motion_Detector
+Fun motion detector with opencv + python3 :hearth:
 
-# Install packages:
+### packages:
+- linux:
 1. pip3 install opencv
+
+- windows:
+1. pip install opencv
