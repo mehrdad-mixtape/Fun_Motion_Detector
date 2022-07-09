@@ -71,4 +71,4 @@ def main():
     cv2.destroyAllWindows() # Kill
 
 if __name__ == "__main__":
-    main() # I Love C, Python 
+    main()
