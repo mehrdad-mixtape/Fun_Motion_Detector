@@ -1,5 +1,6 @@
 ## Fun_Motion_Detector
-Fun motion detector with opencv + python3 :hearth:
+Motion detector with opencv + python3 = 😏
+Your camera can detect your motion and record your video! same as security camera :smile:
 
 ### packages:
 - linux:
