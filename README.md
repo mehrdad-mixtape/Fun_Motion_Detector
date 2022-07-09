@@ -1,5 +1,6 @@
 ## Fun_Motion_Detector
 Motion detector with opencv + python3 = 😏
+
 Your camera can detect your motion and record your video! same as security camera :smile:
 
 ### packages:
@@ -8,3 +9,7 @@ Your camera can detect your motion and record your video! same as security camer
 
 - windows:
 1. pip install opencv
+
+### run:
+- just go to *master* branch
+- > python motion_detector.py
